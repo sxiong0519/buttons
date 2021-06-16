@@ -1,3 +1,5 @@
+const mainContainer = document.querySelector("#container");
+
 const makeReservations = {
     reservations: []
 }
@@ -34,8 +36,10 @@ export const sendRequest = (userServiceRequest) => {
     return fetch(`${API}/reservations`, fetchOptions)
         .then(response => response.json())
         .then(() => {
-            // do something after the POST is finished. Stay tuned for what to put here!
+            // ...and this
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
+
 }
 
 
