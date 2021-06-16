@@ -1,0 +1,21 @@
+{
+    "employees": [
+        {"id": 1,
+        "name": "Mike" 
+        },
+        {"id": 2,
+        "name": "Leslie"
+        }
+    ],
+    "completion": [],
+    "reservations": [
+        {"id": 1,
+        "parentName": "James",
+        "childName": "Louis",
+        "attendants": 8,
+        "address": "134 Love Street",
+        "date": "2021-08-04",
+        "duration": 8
+        }
+    ]
+}
