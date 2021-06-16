@@ -37,3 +37,13 @@ export const sendRequest = (userServiceRequest) => {
             // do something after the POST is finished. Stay tuned for what to put here!
         })
 }
+
+
+export const deleteReservation = (id) => {
+    return fetch(`${API}/reservations/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
