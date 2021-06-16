@@ -1,4 +1,5 @@
 import { getReservations } from "./data.js"
+import { deleteReservation } from "./data.js"
 
 export const Reservations = () => {
     const reservations = getReservations()
