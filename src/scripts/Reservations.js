@@ -8,7 +8,8 @@ export const Reservations = () => {
     const listItems = reservations.map(reservation => {
         return `
         <li>
-            ${reservation.parentName}
+            ${reservation.parentName} would like to reserve a clown for ${reservation.childName} on ${reservation.date} 
+            for ${reservation.duration} hour(s) at ${reservation.address}.
             
         </li>
     `
