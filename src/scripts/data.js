@@ -41,3 +41,13 @@ export const sendRequest = (userServiceRequest) => {
         })
 
 }
+
+
+export const deleteReservation = (id) => {
+    return fetch(`${API}/reservations/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}

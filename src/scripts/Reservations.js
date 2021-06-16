@@ -8,8 +8,11 @@ export const Reservations = () => {
     const listItems = reservations.map(reservation => {
         return `
         <li>
-            ${reservation.parentName} would like to reserve a clown for ${reservation.childName} on ${reservation.date} 
-            for ${reservation.duration} hour(s) at ${reservation.address}.
+        ${reservation.parentName} would like to reserve a clown for ${reservation.childName} on ${reservation.date} 
+        for ${reservation.duration} hour(s) at ${reservation.address}.
+            <button class="reservation__delete delete" 
+                id="reservation--${reservation.id}"> Delete
+                </button>
             
         </li>
     `
@@ -24,3 +27,11 @@ export const Reservations = () => {
 
 
 
+const mainContainer = document.querySelector("#container")
+
+mainContainer.addEventListener("click", click => {
+    if (click.target.id.startsWith("reservation--")) {
+        const [,reservationId] = click.target.id.split("--")
+        deleteReservation(parseInt(reservationId))
+    }
+})
